@@ -5,7 +5,6 @@ import com.fitguy.userservice.dto.UserResponse;
 import com.fitguy.userservice.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

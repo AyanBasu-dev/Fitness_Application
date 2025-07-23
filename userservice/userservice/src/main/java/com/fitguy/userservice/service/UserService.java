@@ -3,6 +3,7 @@ package com.fitguy.userservice.service;
 import com.fitguy.userservice.dto.RegisterRequest;
 import com.fitguy.userservice.dto.UserResponse;
 import com.fitguy.userservice.model.User;
+import com.fitguy.userservice.model.UserRole;
 import com.fitguy.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,7 @@ public class UserService {
                 .password(request.getPassword())
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
+                .role(UserRole.USER)
                 .build();
     }
 }
