@@ -8,6 +8,9 @@ import com.fitguy.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -49,5 +52,12 @@ public class UserService {
                 .lastName(request.getLastName())
                 .role(UserRole.USER)
                 .build();
+    }
+
+    public List<UserResponse> getUsers() {
+        List<User> userList = userRepository.findAll();
+        return userList.stream()
+                .map(this::convertUserToUserResponse)
+                .collect(Collectors.toList());
     }
 }
